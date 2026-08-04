@@ -1,0 +1,20 @@
+---
+// Halaman daftar artikel
+import Layout from '../layouts/Layout.astro';
+import { posts } from '../data/posts';
+---
+<Layout title="Artikel — Chokdi Astro" description="Daftar artikel demo">
+  <a class="back" href="/">← Kembali</a>
+  <h1>📰 Artikel</h1>
+  <p class="lead">Semua artikel demo di blog Astro ini.</p>
+
+  <div class="post-grid">
+    {posts.map((p) => (
+      <a class="post-card" href={p.url}>
+        <h3>{p.emoji} {p.title}</h3>
+        <time>{p.date}</time>
+        <p>{p.excerpt}</p>
+      </a>
+    ))}
+  </div>
+</Layout>

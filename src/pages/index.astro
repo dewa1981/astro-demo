@@ -1,0 +1,20 @@
+---
+// Halaman Home — daftar post terbaru
+import Layout from '../layouts/Layout.astro';
+import { posts } from '../data/posts';
+---
+<Layout title="Chokdi Astro — Blog Demo" description="Demo blog Astro oleh Chokdi">
+  <h1>✨ Chokdi Astro Blog</h1>
+  <p class="lead">Demo Astro — static site generator modern. Ini versi demo, bandingkan dengan Hugo kita!</p>
+  <span class="badge">⚡ 0 JavaScript · 🚀 Super cepat</span>
+
+  <div class="post-grid">
+    {posts.map((p) => (
+      <a class="post-card" href={p.url}>
+        <h3>{p.emoji} {p.title}</h3>
+        <time>{p.date}</time>
+        <p>{p.excerpt}</p>
+      </a>
+    ))}
+  </div>
+</Layout>

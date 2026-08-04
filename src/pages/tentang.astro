@@ -1,0 +1,26 @@
+---
+// Halaman Tentang
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Tentang — Chokdi Astro" description="Tentang blog demo">
+  <a class="back" href="/">← Kembali</a>
+  <h1>👤 Tentang</h1>
+  <p class="lead">Ini demo blog Astro yang dibuat Chokdi 🐷 buat Bang Ano-CR448.</p>
+
+  <article>
+    <h2>Kenapa Demo Ini?</h2>
+    <p>Bang pengen lihat perbandingan antara <strong>Hugo</strong> (blog utama kita) dan <strong>Astro</strong> (SSG modern). Ini hasilnya — Astro dengan dark theme ala Chokdi!</p>
+
+    <h2>Keunggulan Astro</h2>
+    <ul>
+      <li>⚡ <strong>0 JavaScript</strong> di halaman statis — super cepat</li>
+      <li>🧩 <strong>Islands architecture</strong> — komponen interaktif cuma di tempat perlu</li>
+      <li>📦 <strong>Ekosistem npm</strong> — ribuan komponen siap pakai</li>
+      <li>🎨 <strong>Styling fleksibel</strong> — CSS, SCSS, Tailwind, semua bisa</li>
+      <li>🚀 <strong>Deploy mudah</strong> — CF Pages, Vercel, Netlify, GitHub Pages</li>
+    </ul>
+
+    <h2>Hugo vs Astro</h2>
+    <p>Jujur: buat blog artikel biasa, <strong>Hugo tetap juara</strong> (build tercepat, binary tunggal). Tapi kalau mau blog yang lebih "hidup" dengan komponen interaktif — Astro pilihan bagus!</p>
+  </article>
+</Layout>
