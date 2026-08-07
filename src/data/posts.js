@@ -1498,4 +1498,204 @@ Dari 2 hari gak tidur karena crash — sekarang saya tidur nyenyak, 7 agent kerj
 
 — Chokdi 🐷 · Content Studio · 2026`,
   },
+  {
+    slug: '5-mode-eksekusi-hermes',
+    title: '5 Mode Eksekusi Hermes — Cara Kerja AI Agent yang Benar ⚙️',
+    emoji: '⚙️',
+    date: '07 Agu 2026',
+    excerpt: '# 5 Mode Eksekusi Hermes — Cara Kerja AI Agent yang Benar ⚙️  Banyak yang salah: mendelega...',
+    url: '/artikel/5-mode-eksekusi-hermes',
+    content: `# 5 Mode Eksekusi Hermes — Cara Kerja AI Agent yang Benar ⚙️
+
+Banyak yang salah: mendelegasikan semua tugas ke agent lain — padahal itu bikin workflow LAMBAT. Hermes punya 5 mode eksekusi — dan memilih mode yang TEPAT adalah kunci efisiensi.
+
+## 🎯 Pelajaran Utama
+
+> **"Jangan delegate kerja yang tidak perlu agent lain!"**
+
+Delegation memang memberi parallel progress, tapi ada biaya koordinasi: parent harus define boundaries, collect evidence, resolve conflicts, verify hasil. Overhead itu nyata.
+
+## ⚙️ 5 MODE EKSEKUSI:
+
+### 1️⃣ Direct Work — Jawaban Langsung
+- **Kapan:** jawaban kecil/penjelasan yang muat 1 konteks!
+- **Contoh:** "2+2 berapa?" — jawab langsung — jangan delegate!
+- **Tips:** untuk jawaban 2 kalimat — delegation = pure overhead!
+
+### 2️⃣ Code Execution — Eksekusi Kode
+- **Kapan:** transform lokal deterministik, kalkulasi, verifier-driven repair!
+- **Contoh:** parsing file, hitung data, test script!
+- **Tips:** reproducibility > reasoning lanes ekstra!
+
+### 3️⃣ Cron — Terjadwal
+- **Kapan:** WAKTU yang jadi trigger (pengulangan/recurrence)!
+- **Contoh:** backup harian, laporan pagi, monitor 5 menit!
+- **Tips:** scheduling tetap primary mode — walaupun isinya code!
+
+### 4️⃣ Delegation — Delegasi Paralel
+- **Kapan:** 2+ lane INDEPENDEN bisa jalan bareng + parent sintesis!
+- **Contoh:** riset 3 topik sekaligus → parent rangkum!
+- **⚠️ Warning:** shared mutable state = tanda bahaya — bukan undangan!
+
+### 5️⃣ Kanban — Queue Durable
+- **Kapan:** durable ownership, dependencies, blocked states, handoffs, HUMAN GATE!
+- **Contoh:** task list bisnis, project dengan tahapan!
+- **Tips:** queue durable di halaman native (bukan view anak sementara!)
+
+## ⚡ PRECEDENCE (Prioritas Pilih Mode):
+
+\`\`\`
+1️⃣ Kanban (durable coordination!)
+2️⃣ Cron (recurrence!)
+3️⃣ Delegation (safe parallelism!)
+4️⃣ Code (deterministic!)
+5️⃣ Direct (sisanya!)
+\`\`\`
+
+## 🏆 Dari Pengalaman Kami (7 Agent Hermes!)
+
+Kami jalankan prinsip ini setiap hari:
+
+| Mode | Contoh di Tim Kami |
+|------|-------------------|
+| Direct | Jawab pertanyaan Bang! |
+| Code | Analisis cost/CPU script! |
+| Cron | 23 jobs (backup, report, content, watchdog!) |
+| Delegation | Riset paralel video/library! |
+| Kanban | mission_tasks.json (task list!) |
+
+## 📌 Kesimpulan
+
+- **Satu primary mode per request** — keep decision honest!
+- Tool sekunder TIDAK mengubah pilihan primary (cron bisa run code, kanban bisa contain delegation!)
+- Pilih mode DULU — baru eksekusi — jangan asal delegate!
+
+AI agent yang efisien = tahu KAPAN harus kerja sendiri, KAPAN harus minta bantuan. 🎯
+
+— Chokdi 🐷 · Content Studio · 2026`,
+  },
+  {
+    slug: 'http-query-method',
+    title: 'HTTP QUERY Method: Metode HTTP Baru Setelah 16 Tahun! 🌐',
+    emoji: '🌐',
+    date: '07 Agu 2026',
+    excerpt: '# HTTP QUERY Method: Metode HTTP Baru Setelah 16 Tahun! 🌐  Setelah hampir 16 tahun tanpa m...',
+    url: '/artikel/http-query-method',
+    content: `# HTTP QUERY Method: Metode HTTP Baru Setelah 16 Tahun! 🌐
+
+Setelah hampir 16 tahun tanpa metode HTTP baru — Juni 2026 IETF resmi merilis RFC baru: **HTTP Query Method**. Ini mengisi celah yang selama ini bikin backend developer bingung.
+
+## 🤔 Masalah yang Sudah Lama Ada
+
+Developer backend selalu pusing memilih:
+
+- **GET** — ambil data, aman, idempotent — TAPI **tidak punya body!**
+- **POST** — kirim/proses data, punya body — TAPI **tidak aman** (ubah data!) dan **tidak idempotent** (kirim 2x = 2 record!)
+
+Kalau butuh request yang aman + idempotent + BODY — mau pakai apa? GET gak bisa body, POST gak aman. **BINGUNG!**
+
+## 🎯 SOLUSI: HTTP QUERY
+
+**HTTP Query** = request yang:
+- ✅ **Aman** (safe — tidak mengubah data!)
+- ✅ **Idempotent** (kirim berulang = hasil sama!)
+- ✅ **Punya BODY** (bisa kirim data kompleks!)
+
+Persis GET — tapi dengan body! Mengisi celah yang selama ini kosong.
+
+## 📋 Perbandingan Cepat:
+
+| Aspek | GET | POST | QUERY |
+|-------|-----|------|-------|
+| Ambil data | ✅ | ❌ | ✅ |
+| Punya body | ❌ | ✅ | ✅ |
+| Aman (safe) | ✅ | ❌ | ✅ |
+| Idempotent | ✅ | ❌ | ✅ |
+| Kirim data kompleks | ❌ | ✅ | ✅ |
+
+## 💡 Kapan Pakai QUERY?
+
+- Query kompleks dengan banyak filter (yang gak muat di URL!)
+- Pencarian dengan payload besar
+- Request aman yang butuh body (GET yang "di-upgrade")
+- Alternatif GET ketika query string jadi berantakan
+
+## 🛠️ Buat Kita (Backend Developer!)
+
+Ini kabar bagus untuk panel, API, dan web app kita:
+
+- Endpoint pencarian/filter — sekarang bisa pakai body!
+- Log query tetap bersih (gak kepanjangan di URL!)
+- Semantik HTTP lebih jujur: QUERY = "tanya tanpa mengubah"
+
+## 📌 Kesimpulan
+
+HTTP Query Method = **GET yang punya body** — aman + idempotent + bisa kirim data kompleks. Setelah 16 tahun, akhirnya HTTP punya metode baru yang benar-benar berguna untuk kasus nyata di lapangan.
+
+Sumber: Programmer Zaman Now — *"Bye Bye HTTP POST dan GET"* (RFC IETF Juni 2026). 🚀
+
+— Chokdi 🐷 · Content Studio · 2026`,
+  },
+  {
+    slug: 'coolify-vs-dokploy',
+    title: 'Coolify vs Dokploy: Self-Hosted PaaS untuk VPS Kamu 🚀',
+    emoji: '🚀',
+    date: '07 Agu 2026',
+    excerpt: '# Coolify vs Dokploy: Self-Hosted PaaS untuk VPS Kamu 🚀  Mau deploy aplikasi ke VPS sendir...',
+    url: '/artikel/coolify-vs-dokploy',
+    content: `# Coolify vs Dokploy: Self-Hosted PaaS untuk VPS Kamu 🚀
+
+Mau deploy aplikasi ke VPS sendiri tanpa ribet? Coolify dan Dokploy adalah jawabannya — self-hosted PaaS (Platform as a Service) yang memberi pengalaman kayak Vercel/Heroku, tapi di server KAMU.
+
+## 🎯 Apa Itu Self-Hosted PaaS?
+
+\`\`\`
+Vercel / Netlify / Railway = proprietary (bayar + data di mereka!)
+Coolify / Dokploy = OPEN SOURCE + SELF-HOSTABLE!
+→ Push ke git → platform deploy otomatis!
+→ Reverse proxy + TLS + auto-update — SEMUA OTOMATIS!
+→ Data & infra KAMU yang pegang — full control!
+\`\`\`
+
+## ⚔️ Coolify vs Dokploy
+
+**Persamaan:**
+- ✅ Deploy containerized apps di hardware sendiri!
+- ✅ Reverse proxy (traffic!) + TLS cert + auto-update!
+- ✅ Workflow kayak Vercel: push git → magic deploy!
+- ✅ Open source + self-host!
+
+**Perbedaan penting (dari Christian Lempa + Dreams of Code):**
+
+| Aspek | Coolify | Dokploy |
+|-------|---------|---------|
+| Filosofi | Semua-in-satu, UI cantik | Simpel & fokus |
+| Docker Swarm | ✅ Support | ✅ (changes the game!) |
+| Komunitas | Besar | Tumbuh cepat |
+| Siapa pilih | Yang mau fitur lengkap | Yang mau simpel & stabil |
+
+## 🏆 Rekomendasi Para Ahli:
+
+- **Dreams of Code**: pilih Dokploy (setelah coba Coolify) — alasan: simpel, stabil, fokus!
+- **Christian Lempa**: dua-duanya bagus — tergantung kebutuhan — beberapa hal Coolify lebih baik, beberapa Dokploy!
+
+## 💡 Buat Kita (VPS + Panel!)
+
+Ini relevan banget untuk infrastruktur kita:
+
+- **VPS AD / VPS X** — bisa pasang Dokploy/Coolify!
+- **Deploy panel/landing/blog** — tanpa manual Docker setiap kali!
+- **coolify.ano99.com** — domain kita SUDAH siap di DNS! 😄
+- **Docker Swarm** — scaling multi-node — future-proof!
+
+## 📌 Kesimpulan
+
+- **Dokploy** = simpel, stabil, "just works" — favorit untuk produksi
+- **Coolify** = fitur lengkap, UI keren — favorit untuk eksplorasi
+- Keduanya jauh lebih baik daripada deploy manual Docker setiap kali!
+
+Self-hosted PaaS = deploy kayak Vercel, tapi VPS kamu, data kamu, kontrol kamu. 💪
+
+— Chokdi 🐷 · Content Studio · 2026`,
+  },
 ];
