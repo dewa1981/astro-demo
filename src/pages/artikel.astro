@@ -2,6 +2,9 @@
 // Halaman daftar artikel
 import Layout from '../layouts/Layout.astro';
 import { posts } from '../data/posts';
+const monthMap = {Jan:0,Feb:1,Mar:2,Apr:3,Mei:4,Jun:5,Jul:6,Agu:7,Sep:8,Okt:9,Nov:10,Des:11};
+function pd(s){ const [d,m,y] = s.split(' '); return new Date(+y, monthMap[m], +d); }
+const sorted = [...posts].sort((a,b) => pd(b.date) - pd(a.date));
 ---
 <Layout title="Artikel — Chokdi Astro" description="Daftar artikel demo">
   <a class="back" href="/">← Kembali</a>
@@ -9,7 +12,7 @@ import { posts } from '../data/posts';
   <p class="lead">Semua artikel demo di blog Astro ini.</p>
 
   <div class="post-grid">
-    {posts.map((p) => (
+    {sorted.map((p) => (
       <a class="post-card" href={p.url}>
         <h3>{p.emoji} {p.title}</h3>
         <time>{p.date}</time>

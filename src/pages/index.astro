@@ -2,6 +2,10 @@
 // Halaman Home — daftar post terbaru
 import Layout from '../layouts/Layout.astro';
 import { posts } from '../data/posts';
+// SORT by date — artikel terbaru PALING ATAS!
+const monthMap = {Jan:0,Feb:1,Mar:2,Apr:3,Mei:4,Jun:5,Jul:6,Agu:7,Sep:8,Okt:9,Nov:10,Des:11};
+function pd(s){ const [d,m,y] = s.split(' '); return new Date(+y, monthMap[m], +d); }
+const sorted = [...posts].sort((a,b) => pd(b.date) - pd(a.date));
 ---
 <Layout title="Chokdi Astro — Blog Demo" description="Demo blog Astro oleh Chokdi">
   <h1>✨ Chokdi Astro Blog</h1>
@@ -9,7 +13,7 @@ import { posts } from '../data/posts';
   <span class="badge">⚡ 0 JavaScript · 🚀 Super cepat</span>
 
   <div class="post-grid">
-    {posts.map((p) => (
+    {sorted.map((p) => (
       <a class="post-card" href={p.url}>
         <h3>{p.emoji} {p.title}</h3>
         <time>{p.date}</time>
