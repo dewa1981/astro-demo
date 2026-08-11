@@ -2624,4 +2624,160 @@ Hindsight ngasih jawaban esai lengkap & terstruktur:
 
 Ini alasan utama kita pilih Hindsight dibanding mem0 — dan sekarang udah kebukti di lapangan. — Chokdi 🐷 · Content Studio · 2026`,
   },
+  {
+    slug: 'hermes-browser-use-mode',
+    title: 'Hermes Browser Use Mode: Satu Tool untuk Semua, Hemat Token Drastis',
+    emoji: '🖥️',
+    date: '11 Agu 2026',
+    excerpt: '## Browser Use Mode: Cara Baru Hermes Kendalikan Browser  Tim Nous Research baru rilis upd...',
+    url: '/artikel/hermes-browser-use-mode',
+    content: `## Browser Use Mode: Cara Baru Hermes Kendalikan Browser
+
+Tim Nous Research baru rilis update signifikan untuk Hermes Agent — **Browser Use Mode** yang menyatukan semua tool navigasi browser jadi **satu tool \`browser_exec\`**. Ini bukan sekadar polish, tapi perubahan arsitektur yang bikin kerjaan research dan scraping jauh lebih hemat.
+
+### Masalah Sebelumnya
+
+Dulu, agent harus pakai **banyak tool terpisah** buat navigasi browser:
+
+- Navigasi ke halaman
+- Screenshot
+- Klik elemen
+- Ketik teks
+- Scroll
+- Baca snapshot
+
+Setiap tool = satu putaran LLM = **boros token**. Buat tugas scraping yang butuh puluhan langkah, biayanya numpuk banget.
+
+### Solusinya: Satu Tool \`browser_exec\`
+
+Dengan update ini, Hermes cuma pakai **satu tool** yang handle semuanya. Hasilnya:
+
+- **Multi-item extraction: hemat hingga 61% token** (klaim resmi Nous 48-66%, diukur 61% — konsisten)
+- Single page read justru lebih boros (~2×) — jadi ini bukan untuk tugas sepele
+- Sangat cocok buat research, scraping, channel harvesting
+
+### Cara Setup (4 Langkah)
+
+1. **Update Hermes** dulu ke versi terbaru
+2. **Enable browser toolset**
+3. **Install CLI** — kalau di local langsung ke step 5; di VPS perlu install Chrome + point ke bashrc
+4. **Register browser use skill**
+
+### ⚠️ Trap Penting di VPS
+
+Ada satu masalah umum di VPS: kalau run pertama sukses tapi agent lapor \`browser_exec\` gagal dengan *"no ChromeDevTools protocol endpoint"* dan malah drive browser lewat terminal — **fix segera** dengan \`hermes config set browser...\`.
+
+Kenapa penting? Karena mode ini bikin agent bisa **generate dan eksekusi Python di mesin** yang menjalankan Hermes. Makanya mode ini dibatasi untuk sesi dengan akses terminal. **Jangan kasih personal Chrome** — pakai browser yang disediakan tim Nous.
+
+### Local vs VPS: Mana Lebih Baik?
+
+| Skenario | Local | VPS |
+|---|---|---|
+| YouTube/IG/X (anti-bot keras) | ✅ Jauh lebih baik | ❌ Kena "confirm you're not a bot" |
+| Website gampang (Wikipedia, docs, Hugo/WordPress, RSS, JSON API) | ✅ | ✅ Bisa |
+| Website JS-rendered (Shopify, Next.js) | ✅ | ⚠️ Butuh Firecrawl |
+
+- **Local machine** jauh lebih efektif — bisa tembus anti-bot website berat
+- Di **VPS**, tetap bisa workaround: ekstrak metadata video, harvest data channel (judul/views/umur/deskripsi/komentar)
+- Di VPS, stick ke website gampang yang bisa di-curl/fetch
+- Pakai **Firecrawl** (subscription Nous) buat website JS-rendered dengan sedikit bot wall
+
+### Orkestrasi Multi-Agent
+
+Contoh menarik dari video: proses entirely dijalankan oleh **Kimi** (orchestrator agent) yang ngobrol ke Hermes agent dan menyuruhnya buka halaman video. Semua prompt datang dari Kimi, bukan manual. Kalau punya lebih dari satu agent, bisa pakai pola ini buat speed up kerjaan.
+
+### Kustomisasi Tanpa Batas
+
+Karena ini skill-based, kamu bisa buat/ubah file \`SKILL.md\` untuk ngatur:
+
+- Cara agent browse halaman
+- Cara agent compile & ringkas data
+- Cara agent bikin laporan dari yang di-scrape
+
+### Kesimpulan
+
+Browser Use Mode adalah **game changer** untuk research dan scraping di Hermes Agent. Kuncinya:
+
+- Gunakan untuk **multi-item extraction** (bukan baca 1 halaman)
+- **Local > VPS** untuk website anti-bot
+- Hemat token hingga **61%** pada tugas harvest besar
+- Bisa diorkestrasi agent lain + dikustomisasi lewat skill
+
+Tim Nous juga bilang lagi pivot ke arah lokal karena banyak nilai buat scraping. Jadi kalau kamu serius di dunia scraping, **local setup Hermes** layak dipertimbangkan.
+
+Artikel terkait: [DeepSeek V4 Flash di Mac Studio](/posts/deepseek-v4-flash-mac-studio/), [Mac Studio M5 Ultra](/posts/mac-studio-m5-ultra-monster/)`,
+  },
+  {
+    slug: 'mem0-mcp-vs-hindsight',
+    title: 'Mem0 MCP vs Hindsight MCP: Mem0 Ternyata Juga Punya MCP!',
+    emoji: '🧠',
+    date: '11 Agu 2026',
+    excerpt: '## Mem0 Juga Punya MCP Server!  Saat awal membandingkan, banyak yang mengira Mem0 hanya ka...',
+    url: '/artikel/mem0-mcp-vs-hindsight',
+    content: `## Mem0 Juga Punya MCP Server!
+
+Saat awal membandingkan, banyak yang mengira Mem0 hanya kasih akses API key biasa. Ternyata **Mem0 juga punya MCP server** (\`https://mcp.mem0.ai/mcp\`) yang membuka memory tools lewat Model Context Protocol.
+
+### Setup Mem0 MCP
+
+\`\`\`bash
+npx mcp-add \\
+  --name mem0-mcp \\
+  --type http \\
+  --url "https://mcp.mem0.ai/mcp" \\
+  --clients "claude,claude code,cursor,windsurf,vscode,opencode"
+\`\`\`
+
+Auth: browser sign-in sekali, ATAU pakai API key bearer token (buat headless/CI). Server di-host Mem0, data numpang di akun Mem0.
+
+### Tools Mem0 MCP (11 tools)
+
+| Tool | Fungsi |
+|---|---|
+| \`add_memory\` | Simpan teks/percakapan |
+| \`search_memories\` | Semantic search + filter |
+| \`get_memories\` | List memory + pagination |
+| \`get_memory\` | Ambil 1 memory by ID |
+| \`update_memory\` | Update memory |
+| \`delete_memory\` | Hapus 1 memory |
+| \`delete_all_memories\` | Hapus semua |
+| \`delete_entities\` | Hapus entitas + memory |
+| \`list_entities\` | List entitas |
+| \`list_events\` | List event operasi |
+| \`get_event_status\` | Cek status async |
+
+## Perbandingan Jujur: Mem0 MCP vs Hindsight MCP
+
+| Fitur | **Mem0 MCP** | **Hindsight MCP** |
+|---|---|---|
+| Jumlah tools | **11** | **35** |
+| Recall / Retain | ✅ | ✅ |
+| Reflect (analisa strategis) | ❌ | ✅ |
+| Mental models | ❌ | ✅ |
+| Directives | ❌ | ✅ |
+| Documents | ❌ | ✅ |
+| Operations | ❌ | ✅ |
+| Hosting | Cloud Mem0 doang | **Self-host (kontrol penuh)** |
+| Data | Di akun Mem0 | **Di server sendiri** |
+
+## Kenapa Hindsight Tetap Menang
+
+Meski Mem0 punya MCP, beberapa keunggulan Hindsight yang menentukan:
+
+1. **Lebih kaya tools** — 35 vs 11. Reflect, mental models, directives, documents, operations tidak dimiliki Mem0.
+2. **Self-hosted** — data kita di server sendiri, bukan numpang cloud orang. Kontrol penuh, aman.
+3. **Reflect** — fitur unik yang baca seluruh knowledge graph dan kasih jawaban strategis terstruktur. Mem0 ga punya.
+4. **Standar industri** — dua-duanya MCP, tapi Hindsight lebih dalam.
+
+### Analogi
+
+- **Mem0 MCP** = remote control 11 tombol
+- **Hindsight MCP** = remote control 35 tombol + bisa dioprek sendiri (self-host)
+
+## Kesimpulan
+
+Keputusan **pindah ke Hindsight tetap 1000% benar**. Mem0 memang ikut punya MCP, tapi Hindsight lebih kaya fitur dan self-host. Ditambah Hermes punya **plugin memory Hindsight bawaan** (\`provider: hindsight\`) — integrasi resmi, tinggal colok config.
+
+Artikel terkait: [Reflect Feature Hindsight](/posts/hindsight-reflect-feature/), [Hermes True Memory](/posts/hermes-true-memory-mnemosyne-hindsight/)`,
+  },
 ];
