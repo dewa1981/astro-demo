@@ -2780,4 +2780,34 @@ Keputusan **pindah ke Hindsight tetap 1000% benar**. Mem0 memang ikut punya MCP,
 
 Artikel terkait: [Reflect Feature Hindsight](/posts/hindsight-reflect-feature/), [Hermes True Memory](/posts/hermes-true-memory-mnemosyne-hindsight/)`,
   },
+  {
+    slug: 'qwen27b-vscode-gratis',
+    title: 'Qwen 3.8 27B di VS Code — Gratis & Unlimited, Hemat Token',
+    emoji: '⚡',
+    date: '20 Agu 2026',
+    excerpt: 'Qwen 3.8 27B gratis & unlimited di VS Code — AI coding assistant lokal tanpa biaya per-token.',
+    url: '/artikel/qwen27b-vscode-gratis',
+    content: `Qwen 3.8 27B ternyata bisa dipakai **gratis & unlimited** langsung di VS Code. Model open-source buatan Alibaba ini cukup kuat buat jadi AI coding assistant lokal — autocomplete, chat, refactor — tanpa biaya per-token.
+
+## Kenapa dipakai di VS Code?
+
+VS Code & fork-nya (Cursor) bisa connect ke model lokal lewat Ollama. Lo dapet autocomplete, chat assistant, dan refactor kode — semua tanpa abonemen.
+
+## Cara pasang (ringkas)
+
+1. Install **Ollama** di mesin lo
+2. \`ollama pull qwen3.8:27b-mlx\` (versi Apple Silicon)
+3. Install extension VS Code (Cline / Continue / Roo Code)
+4. Arahkan base URL ke \`http://localhost:11434\`
+5. Mulai coding — AI langsung aktif, gratis & unlimited
+
+## Hibrid buat hemat token
+
+Model lokal gak bayar per-token — cuma makan listrik & RAM. Pola ideal:
+
+- **Coding ringan** (autocomplete, Q&A) → Qwen 27B lokal (gratis)
+- **Task kompleks** (app besar, debug sulit) → model cloud premium
+
+Buat yang belum pernah coba lokal LLM, ini pintu masuk yang bagus — tinggal install Ollama, langsung jalan. 🚀`,
+  },
 ];
