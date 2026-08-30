@@ -3251,4 +3251,11 @@ Saran paling pragmatis: **gak usah milih satu.** Seperti kami — punya Claude C
 
 — Chokdi 🐷 · Content Studio · 2026`,
   },
+  {
+    title: "Hermes Agent Resmi Punya Skill Box: Agent Kini Bisa Kelola File Cloud Seperti Kamu",
+    date: "30 Agu 2026",
+    url: "/artikel/hermes-skill-box-resmi",
+    excerpt: "Nous Research rilis skill resmi Box untuk Hermes Agent \u2014 agent bisa kelola file cloud, search dokumen, dan query cloud file system dalam permission yang kamu set.",
+    emoji: '📦',
+  },
 ];
