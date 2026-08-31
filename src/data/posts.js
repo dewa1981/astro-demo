@@ -3187,8 +3187,8 @@ WorkBuddy itu **pesaing QwenWork** — jago di produktivitas kantor, tapi gak bi
 Jadi bukan soal mana yang lebih canggih — tapi **mana yang cocok sama kebutuhan**. Buat yang mau bikin bot AI buat bisnis, jawabannya tetap satu: agent self-hosted yang lo kontrol sendiri. 💪
 
 — Chokdi 🐷 · Content Studio · 2026`,
-  },,
-{
+  },
+  {
     slug: 'tencent-codebuddy-vs-claude-code-vs-codex',
     title: 'Tencent CodeBuddy vs Claude Code vs Grok CLI vs Codex: Siapa Raja Coding AI?',
     emoji: '🧑‍💻',
@@ -3250,77 +3250,7 @@ CodeBuddy itu **pendatang baru yang serius** dari kubu Tencent — terutama unik
 Saran paling pragmatis: **gak usah milih satu.** Seperti kami — punya Claude Code dan Grok CLI di server yang sama, tinggal pilih sesuai kebutuhan. Senjata lengkap, kerjaan lancar. 💪
 
 — Chokdi 🐷 · Content Studio · 2026`,
-  },,
-{
-
-    slug: 'grok-bot-12-use-case-4-power-moves',
-    title: 'Grok Bot $20/Bulan: 12 Use Case & 4 Power Moves yang Bikin Kerja Otomatis',
-    emoji: '🎬',
-    date: '30 Agu 2026',
-    excerpt: 'Dua minggu lalu Grok Bot butuh $300/bulan. Sekarang mulai **$20/bulan** — dan baru-baru ini kan...',
-    url: '/artikel/grok-bot-12-use-case-4-power-moves',
-    content: `Dua minggu lalu Grok Bot butuh $300/bulan. Sekarang mulai **$20/bulan** — dan baru-baru ini kanal *That AI Trick* merilis panduan lengkap berjudul *"Grok Bot Full Guide: 12 Use Cases That Feel Like Cheating"* yang membedah semua kemampuannya. Ini rangkuman lengkapnya: 12 use case, 4 power moves, plus **limitasi yang jarang dibahas** — biar kamu nggak beli kucing dalam karung.
-
-## 🤖 Dulu vs Sekarang: Kenapa Harga Turun Drastis
-
-Grok Bot (produk **SpaceX AI** — hasil merger xAI, dibangun oleh tim Cursor yang dibeli SpaceX $60 miliar) meluncur early-beta 11 Agustus 2026. Awalnya cuma plan $300. Per 26 Agustus, **semua plan Cursor ($20+) dan semua plan SuperGrok ($30+) sudah termasuk Grok Bot**.
-
-Konsepnya beda dari chatbot biasa: Grok Bot **berpikir dalam peran, bukan tugas**. Kamu nggak buka "chat baru" tiap mau kerja — kamu punya **bot yang punya pekerjaan tetap**. Tiap bot terdiri dari 4 komponen:
-
-1. **Profile** — nama + deskripsi pekerjaan. Deskripsi ini dibaca ulang setiap bot jalan, jadi bot nggak pernah lupa perannya.
-2. **Komputer cloud** — satu mesin 24/7 dengan browser, file system, dan terminal. Bisa login ke portal/situs sekali, dan login itu disimpan.
-3. **Plugin & skill** — Gmail, Calendar, Drive, Slack, Notion, X, dan marketplace. Connect sekali, semua bot bisa pakai.
-4. **Routines** — jadwal ("tiap Senin & Kamis jam 8 pagi") atau trigger event ("kalau ada Slack message", "kalau ada git push", bahkan webhook).
-
-## 🎯 12 Use Case dari Video
-
-| # | Use Case | Yang Dilakukan | "Wow"-nya |
-|---|----------|----------------|-----------|
-| 1 | **Email triage** | Bot "Inbox" sortir 40 email/hari jam 7:30, arsip otomatis, draf balasan pakai gaya suaramu, approval sebelum kirim | 40 email → cuma 4 yang butuh kamu, 10 menit |
-| 2 | **Label Gmail** | Bot kasih label otomatis: wholesale, supplier, customer, sponsor, noise | Gmail kebersihan tanpa usaha |
-| 3 | **Calendar bot** | Brief 30 menit sebelum meeting (siapa, history, yang masih open) + pindahin jadwal cukup 1 kalimat | Nggak perlu buka 3 aplikasi |
-| 4 | **Meeting notes** | Transcript rapat → summary + action items + auto-assign via Slack | 20 menit setelah rapat, kerjaan udah jalan |
-| 5 | **Browser work** | Bot buka browser cloud, bandingin harga supplier, isi form, unduh invoice — termasuk fitur **Teach a Task** (kamu demo 1x, bot rekam jadi skill) | Bot bisa "belajar" dari gerakanmu |
-| 6 | **Coding tanpa editor** | Bot "dev" = project manager: bikin plan → delegate ke Cursor agents → PR siap + screenshot | Kamu lihat plan, screenshot, dan tombol — bukan kode |
-| 7 | **Personal bot** | Pesan makan siang, cek kalender pribadi — **selalu berhenti di pembayaran** | Aturan uang: selalu minta "yes" |
-| 8 | **Bersihkan laptop** | Jalan di komputermu sendiri (execution on local computer): cari file gede >90 hari, tanya dulu sebelum hapus | 11GB balik tanpa takut salah hapus |
-| 9 | **Messenger** | ⚠️ Belum ada bridge Telegram/WhatsApp resmi — orang wiring manual (hack, bukan fitur) | Official cuma: iPhone app + push notification per bot |
-| 10 | **Content bot** | Plugin X: analisis post terbaik, lead list dari likes, draf 3 post pakai suaramu | Lead list muncul dari tombol like! |
-| 11 | **Quotes dari file** | Spreadsheet masuk → bikin quote pakai price sheet di Drive → flag diskon >10% → handoff ke bot email | Spreadsheet → email kirim dalam 4 menit |
-| 12 | **Sunday review** | Bot "Atlas" tanya SEMUA bot 1 minggunya → 1 halaman ringkasan + 3 keputusan | Review mingguan jadi bacaan kopi pagi |
-
-## 💪 4 Power Moves (yang Bikin Tim Bot JADI SISTEM)
-
-**1. Chief of Staff ("Atlas")** — satu pintu masuk. Deskripsinya cuma: *"delegasikan dulu ke bot lain kalau ada yang lebih cocok, baru kerjakan sendiri."* Kamu tanya Atlas 1 kalimat → Atlas ngobrol sama Scout, Dev, Cal → balas 1 paragraf: 3 blocker, 2 owner, 1 tanggal. **Bot bisa saling kirim pesan** (baca-only buat kamu) dan ada group chat 2-6 bot.
-
-**2. Skill "Grill Me"** — bot mewawancarai kamu habis-habisan tentang goals, constraints, decision makers, sampai paham konteks. Hasilnya disimpan jadi **shared knowledge** (file di cloud computer yang dibaca semua bot baru).
-
-**3. Bot yang "Watch"** — cek Slack/email/kalender tiap 5 menit, **diam kalau nggak ada perubahan**, notif cuma kalau ada update. Plus routines bisa dipicu **event & webhook**: pesan Slack, git push, order masuk >$500, dll.
-
-**4. Project bots + Pallet + Log** — 1 bot per project besar (konteks nggak nyampur), pallet ⌘K buat navigasi cepat, dan aturan "setelah selesai kerja, tulis 1 baris ke Notion" → 1 halaman berisi aktivitas seluruh tim.
-
-## ⚠️ Limitasi yang Jarang Dibahas (Penting!)
-
-- **Nggak ada model picker** — model Grok di-route otomatis, kamu nggak bisa pilih.
-- **Satu komputer cloud dishare semua bot** — kalau macet, semua macet bareng; bot satu bisa lihat file/session bot lain (bukan tembok isolasi — hati-hati buat bot client!).
-- **Browser cloud sering kena captcha** — bot bakal serahin ke kamu buat diselesaikan.
-- **Usage boros** — limits bisa habis dalam hitungan hari; set monthly limit manual.
-- **Belum ada audit log** terpusat.
-- **No Android, no iPad, no Linux app** resmi — cuma Mac, Windows, iPhone.
-
-## 🐷 Pandangan Kami: Grok Bot vs Armada Hermes
-
-Kami sendiri menjalankan armada agent Hermes self-hosted (VPS + Docker + model router sendiri), jadi penilaiannya seimbang. **Grok Bot cocok kalau kamu:** nggak mau urus server/Docker/API key, butuh bot yang login ke layanan webmu, dan mau mulai hari ini juga.
-
-**Armada self-hosted (Hermes) menang kalau kamu:** butuh kontrol penuh (model bisa ganti-ganti murah, data di tangan sendiri), volume tinggi (biaya per-token jauh lebih efisien), dan butuh isolasi ketat antar agent. Baca juga: [Grok Bot Turun ke $20/Bulan: 9 Use Case dari Paul Lipsky](/posts/grokbot-20-bulan-9-use-case/) dan [11 Tips Membangun Tim Agent AI](/posts/grokbot-11-tips-tim-agent-ai/).
-
-Nasihat penutup yang sepadan untuk semua dunia: **mulai dari SATU bot** dengan nama jelas dan peran spesifik. Tim yang hebat dibangun satu karyawan sekaligus — bukan sekali hire sepuluh orang.
-
-**Sumber:** [Grok Bot Full Guide: 12 Use Cases That Feel Like Cheating](https://youtu.be/_zi2VLRuZa4) — That AI Trick (30 Agu 2026)
-
-— Chokdi 🐷 · Content Studio · 2026`,
   },
-
   {
     slug: '3-cara-browsing-ai-agent-tinyfish-browse-as-you-extension',
     title: '3 Cara AI Agent Browsing: TinyFish, Browse-as-You & Browser Extension',
@@ -3388,6 +3318,124 @@ Connect-nya bisa ke **local gateway** (default \`127.0.0.1:8642\`), **Hermes Clo
 3. **Kita lagi aktif di browser dan mau bantuan Hermes** → **Browser Extension** (draft reply, summarize, rewrite)
 
 Ketiganya juga bisa **dipakai barengan**: TinyFish buat riset cepat, browse-as-you buat akses akun, extension buat kolaborasi real-time. Semua jalan di atas Hermes Agent — satu otak, banyak cara buka web.
+
+— Chokdi 🐷 · Content Studio · 2026
+`,
+  },  {
+    slug: 'hermes-skill-box-resmi',
+    title: 'Hermes Agent Resmi Punya Skill Box: Agent Kini Bisa Kelola File Cloud Seperti Kamu',
+    emoji: '📦',
+    date: '30 Agu 2026',
+    excerpt: 'Hermes Agent Resmi Punya Skill Box: Agent Kini Bisa Kelola File Cloud Seperti Kamu',
+    url: '/artikel/hermes-skill-box-resmi',
+    content: `
+# Hermes Agent Resmi Punya Skill Box: Agent Kini Bisa Kelola File Cloud Seperti Kamu
+
+Nous Research baru saja mengumumkan kabar yang bikin workflow AI makin mulus: **skill resmi Box untuk Hermes Agent** sudah rilis! Lewat skill ini, agent AI bisa "bertindak sebagai kamu" — tentu saja dalam batas permission yang kamu set — untuk mengelola file di cloud storage.
+
+## Apa yang Bisa Dilakukan Agent dengan Skill Box?
+
+- 📁 **Kelola file & versi secara massal** — upload, pindah, rename, versioning, dan sinkronisasi folder tanpa harus klik-klik manual di web
+- 🔍 **Search & extract data dokumen** — cari file berdasarkan isi, ambil metadata, dan ekstrak informasi dari dokumen
+- ☁️ **Query cloud file system** — tanya ke agent "file laporan bulan lalu di mana?" dan agent langsung mencarikannya
+- 🧠 **Box AI** — bertanya tentang isi file, meringkas dokumen, dan membandingkan beberapa file sekaligus
+
+## Kok Ini Penting?
+
+Sebelumnya, kalau agent mau akses file di cloud storage, biasanya harus lewat API yang ribet atau integrasi manual. Sekarang, dengan skill resmi ini:
+
+1. **Setup jauh lebih gampang** — tinggal OAuth sekali, agent langsung terhubung ke akun Box kamu
+2. **Aman & terkontrol** — agent cuma bisa akses file dalam permission yang kamu tentukan
+3. **Bisa di-scale** — proses ribuan file sekaligus (bulk operations) tanpa download satu-satu
+
+## Contoh Penggunaan Nyata
+
+- **Backup otomatis**: agent upload backup ke folder Box tertentu sesuai jadwal
+- **Dokumen bisnis**: agent baca kontrak/invoice di Box, ekstrak data pentingnya, dan rangkum
+- **Arsip rapi**: agent rapikan folder Box, versi file, dan cari duplikat
+- **Riset tim**: beberapa agent kerja bareng di file yang sama di Box
+
+## Untuk Siapa?
+
+Skill ini cocok banget buat:
+- **Solo developer / power user** yang mau agent bantu urus file cloud
+- **Tim kecil** yang butuh kolaborasi file + AI dalam satu alur
+- **Siapa pun yang pusing** sama tumpukan file berantakan di cloud 😄
+
+## Kesimpulan
+
+Skill Box resmi ini adalah salah satu tanda bahwa **agent AI makin jadi "tangan kanan" yang beneran berguna** — bukan cuma buat chat, tapi juga buat kerjaan nyata seperti urus file, dokumen, dan arsip. Dengan permission yang kamu kontrol sendiri, agent bisa kerja lebih mandiri tanpa kamu harus buka dashboard cloud setiap saat.
+
+Kalau kamu pakai Hermes Agent dan punya akun Box — langsung coba, setup-nya cuma beberapa menit! 🚀
+
+*Artikel ditulis berdasarkan pengumuman resmi Nous Research di X (29 Agustus 2026).*
+`,
+  },  {
+    slug: 'grok-bot-12-use-case-4-power-moves',
+    title: 'Grok Bot $20/Bulan: 12 Use Case & 4 Power Moves yang Bikin Kerja Otomatis',
+    emoji: '🎬',
+    date: '30 Agu 2026',
+    excerpt: 'Dua minggu lalu Grok Bot butuh $300/bulan. Sekarang mulai $20/bulan — dan baru-baru ini kanal That AI Trick merilis panduan lengkap berjudul',
+    url: '/artikel/grok-bot-12-use-case-4-power-moves',
+    content: `
+Dua minggu lalu Grok Bot butuh $300/bulan. Sekarang mulai **$20/bulan** — dan baru-baru ini kanal *That AI Trick* merilis panduan lengkap berjudul *"Grok Bot Full Guide: 12 Use Cases That Feel Like Cheating"* yang membedah semua kemampuannya. Ini rangkuman lengkapnya: 12 use case, 4 power moves, plus **limitasi yang jarang dibahas** — biar kamu nggak beli kucing dalam karung.
+
+## 🤖 Dulu vs Sekarang: Kenapa Harga Turun Drastis
+
+Grok Bot (produk **SpaceX AI** — hasil merger xAI, dibangun oleh tim Cursor yang dibeli SpaceX $60 miliar) meluncur early-beta 11 Agustus 2026. Awalnya cuma plan $300. Per 26 Agustus, **semua plan Cursor ($20+) dan semua plan SuperGrok ($30+) sudah termasuk Grok Bot**.
+
+Konsepnya beda dari chatbot biasa: Grok Bot **berpikir dalam peran, bukan tugas**. Kamu nggak buka "chat baru" tiap mau kerja — kamu punya **bot yang punya pekerjaan tetap**. Tiap bot terdiri dari 4 komponen:
+
+1. **Profile** — nama + deskripsi pekerjaan. Deskripsi ini dibaca ulang setiap bot jalan, jadi bot nggak pernah lupa perannya.
+2. **Komputer cloud** — satu mesin 24/7 dengan browser, file system, dan terminal. Bisa login ke portal/situs sekali, dan login itu disimpan.
+3. **Plugin & skill** — Gmail, Calendar, Drive, Slack, Notion, X, dan marketplace. Connect sekali, semua bot bisa pakai.
+4. **Routines** — jadwal ("tiap Senin & Kamis jam 8 pagi") atau trigger event ("kalau ada Slack message", "kalau ada git push", bahkan webhook).
+
+## 🎯 12 Use Case dari Video
+
+| # | Use Case | Yang Dilakukan | "Wow"-nya |
+|---|----------|----------------|-----------|
+| 1 | **Email triage** | Bot "Inbox" sortir 40 email/hari jam 7:30, arsip otomatis, draf balasan pakai gaya suaramu, approval sebelum kirim | 40 email → cuma 4 yang butuh kamu, 10 menit |
+| 2 | **Label Gmail** | Bot kasih label otomatis: wholesale, supplier, customer, sponsor, noise | Gmail kebersihan tanpa usaha |
+| 3 | **Calendar bot** | Brief 30 menit sebelum meeting (siapa, history, yang masih open) + pindahin jadwal cukup 1 kalimat | Nggak perlu buka 3 aplikasi |
+| 4 | **Meeting notes** | Transcript rapat → summary + action items + auto-assign via Slack | 20 menit setelah rapat, kerjaan udah jalan |
+| 5 | **Browser work** | Bot buka browser cloud, bandingin harga supplier, isi form, unduh invoice — termasuk fitur **Teach a Task** (kamu demo 1x, bot rekam jadi skill) | Bot bisa "belajar" dari gerakanmu |
+| 6 | **Coding tanpa editor** | Bot "dev" = project manager: bikin plan → delegate ke Cursor agents → PR siap + screenshot | Kamu lihat plan, screenshot, dan tombol — bukan kode |
+| 7 | **Personal bot** | Pesan makan siang, cek kalender pribadi — **selalu berhenti di pembayaran** | Aturan uang: selalu minta "yes" |
+| 8 | **Bersihkan laptop** | Jalan di komputermu sendiri (execution on local computer): cari file gede >90 hari, tanya dulu sebelum hapus | 11GB balik tanpa takut salah hapus |
+| 9 | **Messenger** | ⚠️ Belum ada bridge Telegram/WhatsApp resmi — orang wiring manual (hack, bukan fitur) | Official cuma: iPhone app + push notification per bot |
+| 10 | **Content bot** | Plugin X: analisis post terbaik, lead list dari likes, draf 3 post pakai suaramu | Lead list muncul dari tombol like! |
+| 11 | **Quotes dari file** | Spreadsheet masuk → bikin quote pakai price sheet di Drive → flag diskon >10% → handoff ke bot email | Spreadsheet → email kirim dalam 4 menit |
+| 12 | **Sunday review** | Bot "Atlas" tanya SEMUA bot 1 minggunya → 1 halaman ringkasan + 3 keputusan | Review mingguan jadi bacaan kopi pagi |
+
+## 💪 4 Power Moves (yang Bikin Tim Bot JADI SISTEM)
+
+**1. Chief of Staff ("Atlas")** — satu pintu masuk. Deskripsinya cuma: *"delegasikan dulu ke bot lain kalau ada yang lebih cocok, baru kerjakan sendiri."* Kamu tanya Atlas 1 kalimat → Atlas ngobrol sama Scout, Dev, Cal → balas 1 paragraf: 3 blocker, 2 owner, 1 tanggal. **Bot bisa saling kirim pesan** (baca-only buat kamu) dan ada group chat 2-6 bot.
+
+**2. Skill "Grill Me"** — bot mewawancarai kamu habis-habisan tentang goals, constraints, decision makers, sampai paham konteks. Hasilnya disimpan jadi **shared knowledge** (file di cloud computer yang dibaca semua bot baru).
+
+**3. Bot yang "Watch"** — cek Slack/email/kalender tiap 5 menit, **diam kalau nggak ada perubahan**, notif cuma kalau ada update. Plus routines bisa dipicu **event & webhook**: pesan Slack, git push, order masuk >$500, dll.
+
+**4. Project bots + Pallet + Log** — 1 bot per project besar (konteks nggak nyampur), pallet ⌘K buat navigasi cepat, dan aturan "setelah selesai kerja, tulis 1 baris ke Notion" → 1 halaman berisi aktivitas seluruh tim.
+
+## ⚠️ Limitasi yang Jarang Dibahas (Penting!)
+
+- **Nggak ada model picker** — model Grok di-route otomatis, kamu nggak bisa pilih.
+- **Satu komputer cloud dishare semua bot** — kalau macet, semua macet bareng; bot satu bisa lihat file/session bot lain (bukan tembok isolasi — hati-hati buat bot client!).
+- **Browser cloud sering kena captcha** — bot bakal serahin ke kamu buat diselesaikan.
+- **Usage boros** — limits bisa habis dalam hitungan hari; set monthly limit manual.
+- **Belum ada audit log** terpusat.
+- **No Android, no iPad, no Linux app** resmi — cuma Mac, Windows, iPhone.
+
+## 🐷 Pandangan Kami: Grok Bot vs Armada Hermes
+
+Kami sendiri menjalankan armada agent Hermes self-hosted (VPS + Docker + model router sendiri), jadi penilaiannya seimbang. **Grok Bot cocok kalau kamu:** nggak mau urus server/Docker/API key, butuh bot yang login ke layanan webmu, dan mau mulai hari ini juga.
+
+**Armada self-hosted (Hermes) menang kalau kamu:** butuh kontrol penuh (model bisa ganti-ganti murah, data di tangan sendiri), volume tinggi (biaya per-token jauh lebih efisien), dan butuh isolasi ketat antar agent. Baca juga: [Grok Bot Turun ke $20/Bulan: 9 Use Case dari Paul Lipsky](/posts/grokbot-20-bulan-9-use-case/) dan [11 Tips Membangun Tim Agent AI](/posts/grokbot-11-tips-tim-agent-ai/).
+
+Nasihat penutup yang sepadan untuk semua dunia: **mulai dari SATU bot** dengan nama jelas dan peran spesifik. Tim yang hebat dibangun satu karyawan sekaligus — bukan sekali hire sepuluh orang.
+
+**Sumber:** [Grok Bot Full Guide: 12 Use Cases That Feel Like Cheating](https://youtu.be/_zi2VLRuZa4) — That AI Trick (30 Agu 2026)
 
 — Chokdi 🐷 · Content Studio · 2026
 `,
