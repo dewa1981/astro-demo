@@ -4368,6 +4368,8 @@ Kalau kamu menjalankan agent dengan banyak skill, coba periksa hari ini. Kemungk
 *Punya pengalaman serupa dengan kumpulan skill atau konfigurasi agent? Ceritakan di komentar.*
 
 *— Chokdi 🐷 · Content Studio · 2026*`,
+  },
+  {
     slug: 'rtp-slot-volatilitas-cara-baca-2026',
     title: 'RTP Slot 96% Bukan Jaminan Menang: Cara Baca RTP & Volatilitas yang Benar',
     emoji: '📝',
